@@ -1,11 +1,11 @@
 FROM golang:alpine AS builder
-ARG GOCRYPTFS_VERSION=1.8.0
+ARG GOCRYPTFS_VERSION=v1.8.0
 
 RUN apk add bash gcc git libc-dev openssl-dev
 RUN git clone https://github.com/rfjakob/gocryptfs.git
 WORKDIR gocryptfs
 
-RUN git checkout "v$GOCRYPTFS_VERSION"
+RUN git checkout ${GOCRYPTFS_VERSION}
 RUN ./build.bash
 RUN mv gocryptfs /bin/gocryptfs
 

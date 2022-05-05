@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["^Dockerfile$"],
+      "matchStrings": ["ARG GOCRYPTFS_VERSION=(?<currentValue>.*?)\\n"],
+      "depNameTemplate": "rfjakob/gocryptfs",
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}

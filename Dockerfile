@@ -14,7 +14,7 @@ RUN git checkout ${GOCRYPTFS_VERSION}
 RUN ./build.bash
 RUN mv gocryptfs /bin/gocryptfs
 
-FROM alpine:3.16
+FROM alpine:3.19
 
 COPY --from=builder /bin/gocryptfs /usr/local/bin/gocryptfs
 RUN apk --no-cache add fuse
